@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      .tab-wrapper {
+        /* padding: 15px;
+        letter-spacing: -0.5px; */
+      }
+      .tab-menu {
+        position: relative;
+      }
+      .tab-menu .tab-list {
+        overflow: hidden;
+      }
+      .tab-menu .tab-list li {
+        float: left;
+        margin-right: 14px;
+      }
+      .tab-menu .tab-list .tab-btn {
+        font-size: 5rem;
+      }
+      .tab-menu .tab-list .tab-cont {
+        display: none;
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        background: #555;
+        color: #fff;
+        text-align: center;
+        width: 250px;
+        height: 100px;
+        line-height: 100px;
+      }
+      .tab-menu .tab-list li.tab-on .tab-btn {
+        font-weight: bold;
+        color: green;
+      }
+      .tab-menu .tab-list li.tab-on .tab-cont {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab-wrapper">
+      <div class="tab-menu">
+        <ul class="tab-list">
+          <li class="tab-on">
+            <a href="#tab1" class="tab-btn">Women</a>
+            <div id="tab1" class="tab-cont">
+              <img src="media/banner1.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <a href="#tab2" class="tab-btn">Men</a>
+            <div id="tab2" class="tab-cont">
+              <img src="media/banner2.jpg" alt="" />
+            </div>
+          </li>
+          <li>
+            <a href="#tab3" class="tab-btn">Acc</a>
+            <div id="tab3" class="tab-cont">
+              <img src="media/banner3.jpg" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const tabList = document.querySelectorAll(".tab-menu .tab-list li");
+      for (var i = 0; i < tabList.length; i++) {
+        tabList[i]
+          .querySelector(".tab-btn")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            for (var j = 0; j < tabList.length; j++) {
+              tabList[j].classList.remove("tab-on");
+            }
+            this.parentNode.classList.add("tab-on");
+          });
+      }
+    </script>
+  </body>
+</html>
