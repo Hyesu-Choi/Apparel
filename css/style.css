@@ -75,6 +75,7 @@ a {
 }
 .mySlides img {
   display: inline-block;
+  /* width: 100%; */
 }
 .banner-text {
   position: absolute;
